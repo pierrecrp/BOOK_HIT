@@ -2,14 +2,18 @@
   <h1 class="mb-3">About this offer</h1>
 </div>
 
-<div class="card" style="width: 18rem;">
+<div class="card row" style="width: 900px">
+  <div>
+  <img src="https://media.istockphoto.com/id/1452697765/fr/photo/figure-effrayante-sur-fond-sombre-et-brumeux.webp?s=1024x1024&w=is&k=20&c=fbs23A112VLqLTSwybrgz61ajdTjs1vSUNSTsb_4i78=" class="avatar-extralarge">
+  </div>
   <div class="card-body">
     <h5 class="card-title"><%= @offer.title %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= @offer.speciality %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Speciality: <%= @offer.speciality %></h6>
+    Description:
     <p class="card-text"><%= @offer.description %></p>
 
     <div class="d-flex justify-content-between">
-      <%= @offer.price %>
+      <p>Price: <%= @offer.price %> €</p>
       <%= @offer.user.user_name %>
     </div>
   </div>
