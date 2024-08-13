@@ -25,6 +25,7 @@ attributes = [
 attributes.each do |attribute|
   offer = Offer.new(attribute)
   offer.user = user
+  offer.save!
   puts "Created #{offer.title}"
 end
 puts "Finished!"
