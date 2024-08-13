@@ -1,0 +1,5 @@
+<%= simple_form_for [@offer, @booking] do |f| %>
+  <%= f.input :target %>
+  <%= f.input :deadline %>
+  <%= f.submit class: "btn btn-dark mt-3"%>
+<% end %>
