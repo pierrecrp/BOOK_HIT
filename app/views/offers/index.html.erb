@@ -1,8 +1,12 @@
 <h1>Offers</h1>
 <div class="card-offer">
   <% @offers.each do |offer| %>
-    <%= link_to offer.title, offer_path(offer) %></li>
+    <%= offer.title %>
+    <%= offer.description %>
+    <%= offer.speciality %>
+    <%= offer.price %>
+    <%= link_to offer.title, offer_path(offer) %>
   <% end %>
 </div>
 
-<%= link_to "Add a restaurant", new_restaurant_path %>
+<%= link_to "New offer", new_offer_path %>
