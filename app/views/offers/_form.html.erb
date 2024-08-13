@@ -1,7 +1,7 @@
 <%= simple_form_for(offer) do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :speciality %>
+  <%= f.input :speciality, as: :select, collection: Offer::SPECIALITIES.map { |spe| [spe.capitalize, spe] } %>
   <%= f.input :price %>
   <%= f.submit class: "btn btn-dark mt-3"%>
 <% end %>
