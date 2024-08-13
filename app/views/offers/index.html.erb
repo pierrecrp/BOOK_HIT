@@ -1,0 +1,8 @@
+<h1>Offers</h1>
+<div class="card-offer"></div>
+  <% @offers.each do |offer| %>
+    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+  <% end %>
+</div>
+
+<%= link_to "Add a restaurant", new_restaurant_path %>
