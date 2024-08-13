@@ -13,11 +13,6 @@ User.destroy_all
 
 puts "Creating users..."
 
-attributes = [
-  { email: "fake@gmail.com", password: "vnoened" },
-  
-]
-
 user = User.create!(email: "example@gmail.com", password: "zcjben")
 
 
