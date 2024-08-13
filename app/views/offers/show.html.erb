@@ -2,19 +2,22 @@
   <h1 class="mb-3">About this offer</h1>
 </div>
 
-<div class="card row" style="width: 900px">
-  <div>
+<div class="card d-flex flex-row m-4 p-3" style="width: 1000px">
+  <div class="d-flex align-item-center">
   <img src="https://media.istockphoto.com/id/1452697765/fr/photo/figure-effrayante-sur-fond-sombre-et-brumeux.webp?s=1024x1024&w=is&k=20&c=fbs23A112VLqLTSwybrgz61ajdTjs1vSUNSTsb_4i78=" class="avatar-extralarge">
   </div>
   <div class="card-body">
-    <h5 class="card-title"><%= @offer.title %></h5>
+    <h4 class="card-title"><%= @offer.title %></h4>
     <h6 class="card-subtitle mb-2 text-muted">Speciality: <%= @offer.speciality %></h6>
-    Description:
+    <div class="my-4">
+    <u>Description:</u>
     <p class="card-text"><%= @offer.description %></p>
-
+    </div>
     <div class="d-flex justify-content-between">
-      <p>Price: <%= @offer.price %> €</p>
-      <%= @offer.user.user_name %>
+      <p>Service executed by <strong><%= @offer.user.user_name %></strong></p>
+      <p><u>Price:</u> <strong><%= @offer.price %> €</strong></p>
     </div>
   </div>
 </div>
+
+<%= link_to "Back to all offers", offers_path(@offers), class:"btn btn-main" %>
