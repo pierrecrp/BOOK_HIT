@@ -1,12 +1,16 @@
 <h1>Offers</h1>
-<div class="card-offer">
-  <% @offers.each do |offer| %>
-    <%= offer.title %>
-    <%= offer.description %>
-    <%= offer.speciality %>
-    <%= offer.price %>
-    <%= link_to offer.title, offer_path(offer) %>
-  <% end %>
+<div class="container">
+  <div class="row align-items-start">
+    <% @offers.each do |offer| %>
+      <div class="col">
+        <%= offer.title %>
+        <%= offer.description %>
+        <%= offer.speciality %>
+        <%= offer.price %>
+        <%= link_to offer.title, offer_path(offer) %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <%= link_to "New offer", new_offer_path %>
