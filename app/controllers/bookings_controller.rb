@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_list, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!
+  before_action :set_offer, only: [:create, :edit, :update, :destroy, :new]
 
   def new
     @booking = Booking.new
@@ -7,7 +8,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.list = @offer
+    @booking.offer = @offer
+    @booking.user = current_user
     if @booking.save
       redirect_to offer_path(@offer)
     else
