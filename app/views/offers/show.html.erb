@@ -1,0 +1,16 @@
+<div class="border-bottom border-weight-2 my-3">
+  <h1 class="mb-3">About this offer</h1>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @offer.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= @offer.speciality %></h6>
+    <p class="card-text"><%= @offer.description %></p>
+
+    <div class="d-flex justify-content-between">
+      <%= @offer.price %>
+      <%= @offer.user.user_name %>
+    </div>
+  </div>
+</div>
