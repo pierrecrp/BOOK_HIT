@@ -1,0 +1,16 @@
+.simple_form {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  textarea,
+  select {
+
+    color: #4A4A4A;
+    border: 1px solid #4A4A4A;
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
