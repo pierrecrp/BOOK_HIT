@@ -1,15 +1,19 @@
+<div class="border-bottom border-weight-2 my-3">
+  <h1 class="mb-3 text-center">All the offers</h1>
+</div>
+
 <div class="container">
   <div class="row">
     <% @offers.each do |offer| %>
       <div class="col-3">
         <%= link_to offer_path(offer) do %>
-          <div class="card rounded-3 shadow p-3 mb-5 mt-5 bg-body rounded" style="width: 18rem;">
+          <div class="card rounded-3 shadow p-3 my-4 bg-body rounded" style="width: 18rem;">
             <img src="https://cms.ioi.dk/media/xxglukcv/hitman-web.jpg?width=2560" class="card-img-top" alt="...">
             <div class="card-body" style="height: 250px; overflow: hidden;">
               <h5 class="card-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><%= offer.title %></h5>
               <p class="card-text" style="height: 100px; overflow: hidden; text-overflow: ellipsis;"><%= offer.description %></p>
-              <p class="card-text"><%= offer.price %>€</p>
-              <p class="btn btn-sm btn-outline-secondary"><%= offer.speciality.capitalize %></p>
+              <p class="card-text">Price: <%= offer.price %>€</p>
+                <p class="speciality"><%= offer.speciality.capitalize %></p>
             </div>
           </div>
         <% end %>
@@ -17,4 +21,3 @@
     <% end %>
   </div>
 </div>
-

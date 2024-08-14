@@ -8,19 +8,30 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto justify-content-evenly align-items-center gap-3">
+      <ul class="navbar-nav me-auto justify-content-end align-items-center">
         <li class="nav-item active">
-          <%= link_to "New offer", new_offer_path, class: "btn btn-ghost" %>
-        <li class="nav-item dropdown">
-          <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
-            <%= link_to "Dashboard", dashboards_path, class: "dropdown-item" %>
-          </div>
+          <%= link_to "New offer", new_offer_path, class: "btn btn-nav" %>
+
+        <li class="nav-item active">
+          <%= link_to "Dashboard", dashboards_path, class: "btn btn-nav" %>
         </li>
+        <li class="nav-item dropdown ms-4">
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://i.ibb.co/1r7S3TQ/profilpic-allypunisher.png" />
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <% if user_signed_in? %>
+            <p class="ms-3"><strong><%= current_user.user_name %></strong></p>
+            <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+
         <!--li class="nav-item"-->
         <!--/li-->
+        <% else %>
+          <!--li class="nav-item"-->
+            <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
+          <!--/li-->
+        <% end %>
+        </div>
+        </li>
       </ul>
     </div>
   </div>
