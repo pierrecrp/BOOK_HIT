@@ -4,7 +4,7 @@
     <% @offers.each do |offer| %>
       <div class="col-3">
         <%= link_to offer_path(offer) do %> 
-          <div class="card rounded-3 shadow p-3 mb-5 bg-body rounded" style="width: 18rem;">
+          <div class="card rounded-3 shadow p-3 mb-5 mt-5 bg-body rounded" style="width: 18rem;">
             <img src="https://cms.ioi.dk/media/xxglukcv/hitman-web.jpg?width=2560" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><%= offer.title %></h5>
