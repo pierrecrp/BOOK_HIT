@@ -1,0 +1,36 @@
+<h1>Dashboard</h1>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">My hits</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <% @offers.each do |offer| %>
+      <li class="list-group-item"><%= offer.title %></li>
+    <% end %>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+<% @bookings.each do |booking| %>
+  <div class="card w-25 mb-3" style="width: 18rem;">
+    <div class="card-body">
+      <i class="fa-solid fa-user"></i> <h5 class="card-title"><%= booking.target %></h5>
+      <p class="card-text">Eliminate before <%= booking.deadline %></p>
+      <a href="#" class="btn btn-primary">Button</a>
+    </div>
+  </div>
+<% end %>
+<% @offers.each do |offer| %>
+  <h2><%= offer.title %></h2>
+  <p><%= offer.created_at %></p>
+<% end %>
+
+<% @bookings.each do |booking| %>
+  <h2><%= booking.target %></h2>
+  <p><%= booking.deadline %></p>
+<% end %>
+

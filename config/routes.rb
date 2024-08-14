@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:edit, :update, :destroy]
+
+  resources :dashboards, only: %i[index]
+  # get "dashboards/offers", to: "dashboards#offers"
+  # get "dashboards/bookings", to: "dashboards#bookings"
 end
