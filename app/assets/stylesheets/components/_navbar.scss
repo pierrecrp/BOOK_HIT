@@ -11,12 +11,17 @@
   width: 100px;
 }
 
-.btn-ghost {
+.btn-nav {
+  font-family: New Amsterdam;
   color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
-  border-radius: 50px;
+  padding: 4px 12px;
   font-weight: lighter;
+  font-size: 20px;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
+}
+
+.btn-nav:hover {
+  color: white;
+  background-color: #afadad;
 }
