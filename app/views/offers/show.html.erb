@@ -20,4 +20,6 @@
   </div>
 </div>
 
-<%= link_to "Back to all offers", offers_path(@offers), class:"btn btn-main" %>
+<%= render "bookings/form", offer: @offer, booking: @booking%>
+<br>
+<%= link_to "Back to all offers", offers_path, class:"btn btn-main" %>
