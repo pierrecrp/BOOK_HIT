@@ -2,31 +2,38 @@
   <h1 class="mb-3 text-center">About this offer</h1>
 </div>
 
-<div class="d-flex justify-content-center">
-  <div class="card d-flex flex-row m-4 p-3" style="width: 1000px">
-    <div class="d-flex align-items-center">
-      <img src="https://images.lecho.be/view?iid=Elvis:94FW4yFJa4z8t0Egj61I_f&context=ONLINE&ratio=16/9&width=640&u=1636033916000" class="avatar-extralarge">
-    </div>
-    <div class="card-body">
-      <h4 class="card-title"><%= @offer.title %></h4>
-      <p class="speciality"><%= @offer.speciality.capitalize %></p>
-      <div class="my-4">
-        <u>Description:</u>
-        <p class="card-text"><%= @offer.description %></p>
+<div class="container-fluid">
+  <div class="row d-flex align-items-stretch" style="min-height: 70vh;">
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <div class="card d-flex flex-column m-4 p-3 h-100" style="width: 100%;">
+        <div class="card-body d-flex flex-column">
+          <h1 class="text-center text-nowrap mt-3"><%= @offer.title %></h1>
+          <div class="row mt-4 flex-grow-1">
+            <div class="col-md-4 d-flex justify-content-center align-items-center mb-5">
+              <img src="https://e7.pngegg.com/pngimages/513/311/png-clipart-silhouette-male-silhouette-animals-head.png" class="avatar-rectangle object-fit-cover">
+            </div>
+            <div class="col-md-8 d-flex flex-column pt-5">
+              <h5>Description:</h5>
+              <p class="card-text"><%= @offer.description %></p>
+              <p class="speciality text-nowrap"><%= @offer.speciality.capitalize %></p>
+              <h4 class="text-nowrap"><i class="fa-solid fa-gun"></i> Service executed by <strong><%= @offer.user.user_name %></strong></h4>
+              <h4 class="text-nowrap"><u><i class="fa-brands fa-bitcoin"></i></u> <strong><%=  @offer.price %> €</strong></h4>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="d-flex justify-content-between">
-        <p>Service executed by <strong><%= @offer.user.user_name %></strong></p>
-        <p><u>Price:</u> <strong><%= @offer.price %> €</strong></p>
+    </div>
+
+
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <div class="card d-flex flex-column m-4 p-3 h-100" style="width: 100%;">
+        <div class="card-body d-flex flex-column justify-content-center">
+          <h1 class="mt-3 text-center mb-5">Book this offer</h1>
+          <div class="flex-grow-1">
+            <%= render "bookings/form", offer: @offer, booking: @booking %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-
-<h1 class="mt-5 text-center">Book this offer</h1>
-
-<div class="d-flex justify-content-center">
-  <div class="card d-flex m-4 p-3" style="width: 1000px">
-    <%= render "bookings/form", offer: @offer, booking: @booking %>
   </div>
 </div>
