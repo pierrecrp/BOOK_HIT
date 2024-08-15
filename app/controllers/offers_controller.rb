@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
-  
-  before_action :set_offer, only: [:show]
+
+  before_action :set_offer, only: %i[show destroy]
   def index
     @offers = Offer.all
   end
@@ -21,6 +21,12 @@ class OffersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+    redirect_to dashboards_path(@dashboards), status: :see_other
   end
 
   private
