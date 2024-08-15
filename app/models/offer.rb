@@ -7,4 +7,11 @@ class Offer < ApplicationRecord
   validates :title, presence: true, length: { maximum: 50 }
   validates :description, presence: true, length: { maximum: 250 }
   validates :speciality, presence: true, inclusion: { in: SPECIALITIES }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_speciality,
+    against: [ :title, :speciality ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
