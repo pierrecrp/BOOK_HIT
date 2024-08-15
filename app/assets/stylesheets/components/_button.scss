@@ -15,6 +15,39 @@
   color: white;
 }
 
+.btn-accept {
+  color: black;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.5s ease;
+  background-color: rgb(74, 247, 6);
+}
+
+.btn-accept:hover {
+  opacity: 1;
+  border: 1px solid rgb(8, 66, 8);
+  background-color: rgb(31, 161, 31);
+  color: white;
+}
+
+.btn-decline {
+  color: black;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.5s ease;
+  background-color: rgb(255, 0, 0);
+}
+
+.btn-decline:hover {
+  opacity: 1;
+  border: 1px solid rgb(119, 4, 23);
+  background-color: rgb(245, 6, 46);
+  color: white;
+}
 .btn-nav {
   font-family: New Amsterdam;
   color: #4A4A4A;
