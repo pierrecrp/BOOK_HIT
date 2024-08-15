@@ -4,6 +4,9 @@ class OffersController < ApplicationController
   before_action :set_offer, only: %i[show destroy]
   def index
     @offers = Offer.all
+    if params[:search] && params[:search][:query].present?
+      @offers = Offer.search_by_title_and_speciality(params[:search][:query])
+    end
   end
   def show
     @booking = Booking.new

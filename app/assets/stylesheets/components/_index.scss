@@ -1,6 +1,7 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
+@import "footer";
 @import "form_legend_clear";
 @import "navbar";
 @import "card";
@@ -8,3 +9,24 @@
 @import "body";
 @import "search_bar";
 @import "form";
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
