@@ -1,6 +1,15 @@
 <div class="border-bottom border-weight-2 mt-3 pb-2">
   <h1 class="mb-3 text-center">Dashboard</h1>
 </div>
+<div class="border-bottom border-weight-2 mt-3 pb-2">
+  <h3>Hello <%= current_user.user_name %> !</h3>
+<% current_user.bookings.each do |booking| %>
+  <div class="card">
+    <%= booking.deadline %>
+  </div>
+<% end %>
+</div>
+
 
 
 <% if @offers.empty? == false %>
