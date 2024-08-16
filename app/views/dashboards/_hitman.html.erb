@@ -1,11 +1,11 @@
 
 <div class="row">
 
-<div class="col-7 border-end border-weight-2">
-  <h2 class="ms-2 mb-2">My offers</h2>
-    <div class="row">
+<div class="col-6 border-end border-weight-2">
+  <h2 class="ms-5 mb-2 mt-3">My offers</h2>
+    <div class="row ms-2">
       <% @offers.each do |offer| %>
-      <div class="card" style="col-3 width: 18rem;">
+      <div class="card col-3 m-3" style="width: 18rem;">
         <div class="card-body border-bottom border-weight-2 d-flex justify-content-between">
           <h4 class="card-title"><%= offer.title %></h4>
           <%= link_to "X", offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
@@ -22,23 +22,31 @@
 </div>
 </div>
 
-<div class="col-5">
-<h2 class="ms-2 mb-3">My bookings</h2>
-<%# @bookings.each do |booking| %>
-  <div class="card mb-3 p-2">
+<div class="col-6">
+<h2 class="ms-5 mb-2 mt-3">My bookings</h2>
+<% @bookings.each do |booking| %>
+  <div class="card mb-3 p-2 m-4">
     <div class="d-flex justify-content-between">
       <div class="card-body">
-        <div class="d-flex flex-row"><i class="fa-solid fa-user"></i><h5 class="ms-2">target<%# booking.target %></h5></div>
-        <p class="card-text">Eliminate before deadline<%# booking.deadline %></p>
+        <div class="d-flex flex-row"><i class="fa-solid fa-user"></i><h5 class="ms-2"><%= booking.target %></h5></div>
+        <p class="card-text">Eliminate before <%= booking.deadline %></p>
       </div>
 
-      <div class="card-body text-end align-bottom">
-      <a href="#" class="btn btn-accept">Accept</a> <a href="#" class="btn btn-decline">Decline</a>
+      <div class="card-body text-end align-text-bottom">
+      <% if booking.accepted == true %>
+      <p class="accepted">Accepted</p>
+      <% elsif booking.accepted == false %>
+      <p class="declined">Declined</p>
+      <% else %>
+      <%= link_to "Accept", booking_path(booking, accepted: true), data: {turbo_method: :patch}, class: "btn btn-main" %>
+      <%= link_to "Decline", booking_path(booking, accepted: false), data: {turbo_method: :patch}, class: "btn btn-main" %>
+      <% end %>
+
       </div>
     </div>
 
   </div>
-<%# end %>
+<% end %>
 </div>
 
 </div>
