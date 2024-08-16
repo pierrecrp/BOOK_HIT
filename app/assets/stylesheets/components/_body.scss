@@ -58,3 +58,24 @@ a {
 .speciality.distortion {
   background-color: rgb(74, 237, 59)b;
 }
+
+.accepted {
+  color: white;
+  display: inline-block;
+  border: 1px solid rgb(8, 66, 8);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  background-color: rgb(31, 161, 31);
+}
+
+.declined {
+  color: white;
+  display: inline-block;
+  border: 1px solid rgb(119, 4, 23);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.5s ease;
+  background-color: rgb(245, 6, 46);
+}

@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_offer, only: [:create, :edit, :update, :destroy, :new]
+  before_action :set_offer, only: [:create, :new]
 
   def new
     @booking = Booking.new
@@ -20,11 +20,12 @@ class BookingsController < ApplicationController
   end
 
   def update
-    if @booking.update(booking_params)
-      redirect_to offer_path(@offer), notice: 'Booking was successfully updated.'
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    @booking = Booking.find(params[:id])
+    @booking.update(accepted: params[:accepted])
+    flash[:notice] = 'Booking was successfully updated.'
+    redirect_to dashboards_path
+    #render :edit, status: :unprocessable_entity
+
   end
 
   def destroy
