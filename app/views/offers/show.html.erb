@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-8 d-flex flex-column pt-5">
               <h2 class="mt-5">Description:</h2>
-              <p class="card-text"><%= @offer.description %></p>
+              <p class="card-text-description"><%= @offer.description %></p>
               <div class="speciality <%= @offer.speciality.parameterize(separator: '_') %>">
                   <%= @offer.speciality.capitalize %>
               </div>

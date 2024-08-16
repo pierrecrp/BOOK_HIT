@@ -1,20 +1,20 @@
 <%= simple_form_for(offer) do |f| %>
   <div class="row">
     <div class="col-md-6">
-      <%= f.input :title %>
+      <%= f.input :title, label_html: {class: "fs-20px"} %>
     </div>
     <div class="col-md-6">
-      <%= f.input :speciality, as: :select, collection: Offer::SPECIALITIES.map { |spe| [spe.capitalize, spe] }, input_html: { class: 'form-control' } %>
+      <%= f.input :speciality, as: :select, collection: Offer::SPECIALITIES.map { |spe| [spe.capitalize, spe] }, input_html: { class: 'form-control' }, label_html: {class: "fs-20px"}%>
     </div>
   </div>
   <div class="row mt-5">
     <div class="col-md-12">
-      <%= f.input :description %>
+      <%= f.input :description, label_html: {class: "fs-20px"} %>
     </div>
   </div>
   <div class="row mt-5">
     <div class="col-md-12">
-      <%= f.input :price %>
+      <%= f.input :price, label_html: {class: "fs-20px"} %>
     </div>
   </div>
   <div class="row">
