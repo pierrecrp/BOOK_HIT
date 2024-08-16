@@ -5,7 +5,7 @@
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
-  transition: opacity 0.5s ease;
+  transition: opacity ease;
 }
 
 .btn-main:hover {
@@ -21,7 +21,7 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  transition: opacity 0.5s ease;
+  transition: 0.5s ease;
   background-color: rgb(74, 247, 6);
 }
 
@@ -38,7 +38,7 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  transition: opacity 0.5s ease;
+  transition: 0.5s ease;
   background-color: rgb(255, 0, 0);
 }
 
@@ -54,11 +54,32 @@
   padding: 4px 12px;
   font-weight: lighter;
   font-size: 20px;
-  opacity: 0.6;
-  transition: opacity 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .btn-nav:hover {
   color: white;
   background-color: rgb(184, 28, 28);
+}
+
+.btn-banner {
+  font-family: New Amsterdam;
+  color: white;
+  font-weight: lighter;
+  font-size: 20px;
+  background-color: rgb(184, 28, 28);
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: 0.5s ease;
+}
+
+.btn-banner:hover {
+  font-family: New Amsterdam;
+  color: white;
+  font-weight: lighter;
+  font-size: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
 }
