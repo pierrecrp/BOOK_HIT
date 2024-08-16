@@ -7,19 +7,19 @@
       <%= f.input :speciality, as: :select, collection: Offer::SPECIALITIES.map { |spe| [spe.capitalize, spe] }, input_html: { class: 'form-control' } %>
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-md-12">
       <%= f.input :description %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6 offset-md-3 d-flex justify-content-center">
+  <div class="row mt-5">
+    <div class="col-md-12">
       <%= f.input :price %>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <%= f.submit class: "btn btn-main mt-3"%>
+      <%= f.submit "Create a contract", class: "btn btn-form mt-3"%>
     </div>
   </div>
 <% end %>

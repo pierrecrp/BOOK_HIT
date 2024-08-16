@@ -9,7 +9,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Formulaire de recherche dans la barre de navigation -->
-     
+
       <ul class="navbar-nav ms-auto align-items-center">
         <%= simple_form_for :search, url: root_path, method: :get do |f| %>
         <div class="search-form-control form-group" id="search-form">
@@ -21,7 +21,7 @@
       <% end %>
 
         <li class="nav-item active">
-          <%= link_to "New offer", new_offer_path, class: "btn btn-nav" %>
+          <%= link_to "New contract", new_offer_path, class: "btn btn-nav" %>
         </li>
         <li class="nav-item active">
           <%= link_to "Dashboard", dashboards_path, class: "btn btn-nav" %>
