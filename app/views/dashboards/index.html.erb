@@ -1,16 +1,27 @@
 <div class="border-bottom border-weight-2 mt-3 pb-2">
-  <h1 class="mb-3 text-center">Dashboard</h1>
+  <h1 class="mb-3 text-center">Hello <%= current_user.user_name %> !</h1>
 </div>
-<div class="border-bottom border-weight-2 mt-3 pb-2">
-  <h3>Hello <%= current_user.user_name %> !</h3>
-<% current_user.bookings.each do |booking| %>
-  <div class="card">
-    <%= booking.deadline %>
+<div class="border-bottom border-weight-2 mt-3 pb-2 px-3">
+  <h3>My bookings</h3>
+
+  <div class="row">
+    <% current_user.bookings.each do |booking| %>
+      <div class="card col-2 p-2 m-2">
+        <div class="d-flex flex-row"><i class="fa-solid fa-user"></i><h5 class="ms-2">Target : <%= booking.target %></h5></div>
+        <p>Eliminate before: <%= booking.deadline %></p>
+        Status:
+        <% if booking.accepted == true %>
+        <p class="text-success">Accepted <i class="fa-solid fa-check"></i></p>
+        <% elsif booking.accepted == false %>
+        <p class="text-danger">Declined <i class="fa-solid fa-x"></i></p>
+        <% else %>
+        <p><i class="fa-regular fa-hourglass"></i> Waiting for Hitman answer..</p>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
 </div>
-
-
 
 <% if @offers.empty? == false %>
   <%= render 'hitman' %>
