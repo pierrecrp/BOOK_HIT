@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpaperswide.com/download/ammunition_weapons-wallpaper-2048x1152.jpg);">
   <div class="container">
     <h1>Don't get your hands dirty</h1>
-    <a href="#down" class="btn btn-banner">Browse all hits</a>
+    <a href="#down" class="btn btn-banner">Browse all contracts</a>
   </div>
 </div>
 
@@ -13,13 +13,15 @@
       <% @offers.each do |offer| %>
         <div class="col-3">
           <%= link_to offer_path(offer) do %>
-            <div class="card rounded-3 shadow p-3 my-4 bg-body rounded" style="width: 18rem;">
+            <div class="card rounded-3 shadow p-3 my-4 bg-body rounded" style="width: 16rem;">
               <img src="https://cms.ioi.dk/media/xxglukcv/hitman-web.jpg?width=2560" class="card-img-top" alt="...">
               <div class="card-body" style="height: 250px; overflow: hidden;">
                 <h5 class="card-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><%= offer.title %></h5>
-                <p class="card-text" style="height: 100px; overflow: hidden; text-overflow: ellipsis;"><%= offer.description %></p>
-                <p class="card-text">Price: <%= offer.price %>€</p>
-                  <p class="speciality"><%= offer.speciality.capitalize %></p>
+                <p class="card-text-index" style="height: 100px; overflow: hidden; text-overflow: ellipsis;"><%= offer.description %></p>
+                <p class="card-text-index">Price: <%= offer.price %>€</p>
+                  <div class="speciality <%= offer.speciality.parameterize(separator: '_') %>">
+                  <%= offer.speciality.capitalize %>
+                  </div>
               </div>
             </div>
           <% end %>
