@@ -1,9 +1,10 @@
 <%= simple_form_for [offer, booking], html: { class: "d-flex flex-column align-items-center gap-5" } do |f| %>
-  <%= f.input :target, wrapper_html: { class: "w-100" } %>
-  <%= f.input :target_address, wrapper_html: { class: "w-100" } %>
+  <%= f.input :target, wrapper_html: { class: "w-100" }, label_html: {class: "fs-20px"} %>
+  <%= f.input :target_address, wrapper_html: { class: "w-100" }, label_html: {class: "fs-20px"} %>
   <%= f.input :deadline,
               as: :string,
               input_html: { data: { controller: "datepicker" } },
-              wrapper_html: { class: 'w-100' } %>
+              wrapper_html: { class: 'w-100' },
+              label_html: {class: "fs-20px"} %>
   <%= f.submit class: "btn btn-form mt-3"%>
 <% end %>
