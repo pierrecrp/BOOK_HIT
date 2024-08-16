@@ -1,5 +1,6 @@
 <%= simple_form_for [offer, booking], html: { class: "d-flex flex-column align-items-center gap-5" } do |f| %>
   <%= f.input :target, wrapper_html: { class: "w-100" } %>
+  <%= f.input :target_address, wrapper_html: { class: "w-100" } %>
   <%= f.input :deadline,
               as: :string,
               input_html: { data: { controller: "datepicker" } },
